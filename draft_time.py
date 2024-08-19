@@ -1,7 +1,13 @@
+#!/usr/bin/env python3
+
+import time
 import pandas as pd
 from math import sqrt
 
+
 df = pd.read_csv("data/collects.csv")
+
+start_time = time.time()
 
 # Train
 unique_sensors = []
@@ -53,5 +59,9 @@ for s in unique_sensors:
             cols_in_alert[col] = False
 
     in_alert[s] = cols_in_alert
+
+end_time = time.time()
+elapsed_time = end_time - start_time
+print(f"Elapsed time: {elapsed_time:.4f} seconds\n")
 
 print(in_alert)
