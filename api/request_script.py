@@ -3,6 +3,7 @@
 import requests
 import numpy as np
 import random
+import pandas as pd
 import json
 
 # Define the list of sensor IDs
@@ -28,16 +29,21 @@ def send_post_request(sensor_id):
     response = requests.post(url.format(sensor_id=sensor_id), json=data)
     return response
 
-# While loop to continuously send requests
-i = 0
-while i < iter_max:
-    # Randomly pick a sensor ID
-    sensor_id = random.choice(sensor_ids)
-    
-    # Send the POST request
-    response = send_post_request(sensor_id)
-    
-    # Print the response from the server
-    print(f"Response for sensor ID {sensor_id}: {response.status_code} - {response.json()}")
+    # While loop to continuously send requests
+def request_loop():
+    i = 0
+    while i < iter_max:
+        # Randomly pick a sensor ID
+        sensor_id = random.choice(sensor_ids)
+        
+        # Send the POST request
+        response = send_post_request(sensor_id)
+        
+        # Print the response from the server
+        print(f"Response for sensor ID {sensor_id}: {response.status_code} - {response.json()}")
 
-    i += 1
+        i += 1
+
+response = requests.get(url.format(sensor_id = sensor_ids[3]))
+df = pd.DataFrame(response.json())
+print(df)
