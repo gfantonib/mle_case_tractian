@@ -5,7 +5,7 @@ import time
 import pandas as pd
 
 # get data
-df = pd.read_csv("data/collects.csv")
+df = pd.read_csv("../data/collects.csv")
 
 # TRAIN
 
