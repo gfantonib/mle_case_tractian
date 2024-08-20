@@ -13,7 +13,8 @@ sensor_ids = [
 ]
 
 # Define the URL of the API
-url = "http://127.0.0.1:5000/{sensor_id}/fit"
+fit_url = "http://127.0.0.1:5000/{sensor_id}/fit"
+weights_url = "http://127.0.0.1:5000/{sensor_id}/weights"
 
 # Define iter max
 iter_max = 20
@@ -26,7 +27,7 @@ def generate_random_values(size):
 def send_post_request(sensor_id):
     values = generate_random_values(4)  # Adjust the size as needed
     data = {"values": values}
-    response = requests.post(url.format(sensor_id=sensor_id), json=data)
+    response = requests.post(fit_url.format(sensor_id=sensor_id), json=data)
     return response
 
     # While loop to continuously send requests
@@ -44,6 +45,6 @@ def request_loop():
 
         i += 1
 
-response = requests.get(url.format(sensor_id = sensor_ids[3]))
+response = requests.get(weights_url.format(sensor_id = sensor_ids[3]))
 df = pd.DataFrame(response.json())
 print(df)

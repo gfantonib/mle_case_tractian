@@ -15,6 +15,10 @@ if not os.path.exists(csv_file_path):
         writer = csv.writer(file)
         writer.writerow(["sensor_id", "mean", "std_dev"])
 
+@app.route("/")
+def index():
+    return "index page!"
+
 @app.route("/<sensor_id>/fit", methods=["POST"])
 def sensor_fit(sensor_id):
 
@@ -35,7 +39,7 @@ def sensor_fit(sensor_id):
     
     return jsonify(result)
 
-@app.route("/<sensor_id>/fit", methods=["GET"])
+@app.route("/<sensor_id>/weights", methods=["GET"])
 def sensor_weights(sensor_id):
 
     df = pd.read_csv(csv_file_path)
