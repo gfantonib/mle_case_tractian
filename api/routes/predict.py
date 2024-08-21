@@ -14,6 +14,9 @@ def sensor_predict(sensor_id):
 	df = pd.read_csv(csv_file_path)
 	df_sensor = df[df['sensor_id'] == sensor_id]
 
+	# print(df_sensor)
+	# print(discriminator * 2)
+
 	series_bool = discriminator >= df_sensor["mean"] + 2*df_sensor["std_dev"]
 
 	return series_bool.to_json()

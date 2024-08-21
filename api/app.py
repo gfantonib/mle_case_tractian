@@ -16,10 +16,10 @@ app.register_blueprint(predict_blueprint)
 
 csv_file_path = "sensor_data.csv"
 
-if not os.path.exists(csv_file_path):
-    with open(csv_file_path, mode='w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow(["sensor_id", "mean", "std_dev"])
 
 if __name__ == "__main__":
+    if not os.path.exists(csv_file_path):
+        with open(csv_file_path, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(["sensor_id", "mean", "std_dev"])
     app.run(debug=True)
