@@ -45,6 +45,7 @@ def request_loop():
 
         i += 1
 
-response = requests.get(weights_url.format(sensor_id = sensor_ids[3]))
+# request_loop()
+response = requests.get(weights_url.format(sensor_id = sensor_ids[0]))
 df = pd.DataFrame(response.json())
 print(df)
