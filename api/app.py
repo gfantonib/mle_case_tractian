@@ -5,6 +5,7 @@ from routes.index import index_blueprint
 from routes.fit import fit_blueprint
 from routes.weights import weights_blueprint
 from routes.predict import predict_blueprint
+from routes.adjust import adjust_blueprint
 import csv
 import os
 
@@ -13,9 +14,9 @@ app.register_blueprint(index_blueprint)
 app.register_blueprint(fit_blueprint)
 app.register_blueprint(weights_blueprint)
 app.register_blueprint(predict_blueprint)
+app.register_blueprint(adjust_blueprint)
 
 csv_file_path = "sensor_data.csv"
-
 
 if __name__ == "__main__":
     if not os.path.exists(csv_file_path):

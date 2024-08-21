@@ -16,6 +16,7 @@ sensor_ids = [
 fit_url = "http://127.0.0.1:5000/{sensor_id}/fit"
 weights_url = "http://127.0.0.1:5000/{sensor_id}/weights"
 predict_url = "http://127.0.0.1:5000/{sensor_id}/predict"
+adjust_url = "http://127.0.0.1:5000/{sensor_id}/adjust"
 
 iter_max = 20
 
@@ -53,6 +54,12 @@ def predict_request_loop():
         })
         print(f"{df_sensor_alert}\n")
 
+def adjust_request_loop():
+    for sensor in sensor_ids:
+        data = {}
+        response = requests.post(adjust_url.format(sensor_id = sensor), json=data)
+        print(f"{response.json()}\n")
+
 
 print("\n")
 print(f"MAKE {iter_max} FIT REQUESTS (POST):\n")
@@ -65,4 +72,12 @@ print("\n")
 
 print(f"MAKE {len(sensor_ids)} PREDICT REQUESTS (POST):\n")
 predict_request_loop()
+print("\n")
+
+print(f"MAKE {len(sensor_ids)} ADJUST REQUESTS (POST):\n")
+adjust_request_loop()
+print("\n")
+
+print(f"MAKE ANOTHER {len(sensor_ids)} WEIGHTS REQUESTS (GET):\n")
+weights_request_loop()
 print("\n")
