@@ -9,7 +9,7 @@ class mlModel:
 		self.sensor_groups_stds = None
 		self.result_df = None
 
-	def clean_data(self):
+	def prepare_data(self):
 		df_light = self.df.drop(["_id", "createdAt", "params.duration", "params.sampRate", "params.timeStart", "temp"], axis=1)
 		self.sensor_groups = df_light.groupby("sensorId")
 
