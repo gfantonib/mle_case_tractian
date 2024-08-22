@@ -18,7 +18,9 @@ Quando usamos estruturas de datos vetorizadas, temos as seguintes vantagens:
 2. Os dados de um vetor serão sempre do mesmo tipo *(restrição)* facilitando as operações feitas neles *(vantagem)*.
 3. Um vetor tira vantagem da arquitetura computacional *(multi-core)* para paralelizar o processamento.
 
-[exemple](./vector_test/vector.py)
+Esses três motivos garantem um tempo menor no processamento dessa estrutura de dados.
+
+[exemplo](./vector_test/vector.py)
 
 ### 2ª etapa:
 ```
