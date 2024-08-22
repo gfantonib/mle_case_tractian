@@ -2,14 +2,15 @@ import pandas as pd
 
 class mlModel:
 
-	def __init__(self, df: pd.DataFrame):
-		self.df = df
+	def __init__(self):
+		self.df = None
 		self.sensor_groups = None
 		self.sensor_groups_means = None
 		self.sensor_groups_stds = None
 		self.result_df = None
 
-	def prepare_data(self):
+	def prepare_data(self, df: pd.DataFrame):
+		self.df = df
 		df_light = self.df.drop(["_id", "createdAt", "params.duration", "params.sampRate", "params.timeStart", "temp"], axis=1)
 		self.sensor_groups = df_light.groupby("sensorId")
 
