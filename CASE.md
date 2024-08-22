@@ -7,7 +7,7 @@ O arquivo **parquet** seria uma boa alternativa.
 2. Sistema de armazenamento e representação culunar que aumenta a eficiência na busca de dados.
 3. Suporta esquemas eficientes de compressão, diminuindo consideravelmente o espaço de armazenamento.
 
-[referência-1](https://parquet.apache.org/docs/overview/)\
+[referência-1](https://parquet.apache.org/docs/overview/motivation/)\
 [referência-2](https://www.linkedin.com/pulse/impressive-csv-vs-parquet-performance-file-size-niraj-hirachan/)
 
 ```
