@@ -11,4 +11,4 @@ sensor_alert.prepare_data(df)
 sensor_alert.train()
 sensor_alert.predict(new_value)
 
-print(sensor_alert.get_result_df())
+print(sensor_alert.get_df_result())
