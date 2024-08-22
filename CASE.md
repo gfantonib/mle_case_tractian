@@ -20,7 +20,7 @@ Quando usamos estruturas de datos vetorizadas, temos as seguintes vantagens:
 
 Esses três motivos garantem um tempo menor no processamento dessa estrutura de dados.
 
-[exemplo](./vector_test/vector.py)
+[exemplo](./draft/vector.py)
 
 ### 2ª etapa:
 ```
