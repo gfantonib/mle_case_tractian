@@ -39,6 +39,8 @@ Quais métricas de performance da API você monitoraria para garantir que seu si
 4. **Throughput:** O número de solicitações bem-sucedidas processadas pela API por unidade de tempo.
 5. **Availability:** A porcentagem de tempo em que a API está operacional e acessível aos usuários.
 
+[referência](https://www.catchpoint.com/api-monitoring-tools/api-performance-monitoring)
+
 ```
 Qual caso de uso você imagina para a rota adjust?
 ```
