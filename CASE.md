@@ -45,7 +45,7 @@ Quais métricas de performance da API você monitoraria para garantir que seu si
 Qual caso de uso você imagina para a rota adjust?
 ```
 1. Seguindo o sentido do nome da própria rota, reformulo a pergunta para: *o que exigiria um ajuste da média de um sensor?*\
-Um ajuste de um valor coletado implica, em algum momento do contato sensor-máquina, um erro.\
+Um ajuste de um valor coletado implica um erro em algum momento do contato sensor-máquina.\
 O erro poderia ser detectado pela diminuição da precisão do modelo.\
 Sua causa poderia estar atrelado ou à mudança da sensibilidade do sensor ou à alguma modificação do fenômeno que ele mede (ex: temperatura da máquina).\
 Em ambos os casos, um ajuste de seus dados poderia ser feito. O sucesso desse ajuste poderia ser testado observando novamente a precisão do modelo.
