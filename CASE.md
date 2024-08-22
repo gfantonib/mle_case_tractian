@@ -1,5 +1,24 @@
 ### 1ª etapa:
+```
+Se tivessemos um arquivo muito grande, qual tipo de arquivo você escolheria para armazenar os dados e por quê?
+```
+O arquivo **parquet** seria uma boa alternativa.
+1. Suporte em quase todas as linguagens.
+2. Sistema de armazenamento e representação culunar que aumenta a eficiência na busca de dados.
+3. Suporta esquemas eficientes de compressão, diminuindo consideravelmente o espaço de armazenamento.
 
+[referência-1](https://parquet.apache.org/docs/overview/)\
+[referência-2](https://www.linkedin.com/pulse/impressive-csv-vs-parquet-performance-file-size-niraj-hirachan/)
+
+```
+O que é vetorização e por quê ela diminui o tempo de processamento de grandes volumes de dados?
+```
+Quando usamos estruturas de datos vetorizadas, temos as seguintes vantagens:
+1. O dado é armazenado de maneira sequencial na memória, facilitando percorrer pela estrutura.
+2. Os dados de um vetor serão sempre do mesmo tipo *(restrição)* facilitando as operações feitas neles *(vantagem)*.
+3. Um vetor tira vantagem da arquitetura computacional *(multi-core)* para paralelizar o processamento.
+
+[exemple](./vector_test/vector.py)
 
 ### 2ª etapa:
 ```
