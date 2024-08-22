@@ -30,6 +30,8 @@ Se uma API REST não estiver sendo rápida o suficiente, qual outra abordagem po
 
 2. Uma outra solução seria estabelecer um tipo de conexão **contínua** e **assíncrona** entre servidor e cliente, evitando o tempo gasto para estabelecer e reestabelecer a conexão. Esse tipo de abordagem reponde pelo nome de **WebSocket** e é usado em programas de *trading quantitativo*.
 
+[speed-obsessed traders](https://www.forbes.com/forbes/2010/0927/outfront-netscape-jim-barksdale-daniel-spivey-wall-street-speed-war.html)
+
 ```
 Quais métricas de performance da API você monitoraria para garantir que seu sistema está funcionando bem?
 ```
