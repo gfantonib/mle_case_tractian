@@ -49,6 +49,8 @@ Quais métricas de performance da API você monitoraria para garantir que seu si
 4. **Throughput:** O número de solicitações bem-sucedidas processadas pela API por unidade de tempo.
 5. **Availability:** A porcentagem de tempo em que a API está operacional e acessível aos usuários.
 
+Essas são algumas métricas de monitoramento da API, mas definitivamente não são as únicas. Seria possível dizer que, mesmo no caso de essas 5 métricas estarem respondendo conforme o esperado, sua API não está funcionando bem. É importante lembrar que a métrica final de uma aplicação é a satisfação do cliente, e que, mesmo se uma API está *performando* bem, não significa que ela esta *funcionando* bem, uma vez que sua funcionalidade e usabilidade não está agradando o usuário.
+
 [referência](https://www.catchpoint.com/api-monitoring-tools/api-performance-monitoring)
 
 ```
