@@ -18,7 +18,7 @@ weights_url = "http://127.0.0.1:5000/{sensor_id}/weights"
 predict_url = "http://127.0.0.1:5000/{sensor_id}/predict"
 adjust_url = "http://127.0.0.1:5000/{sensor_id}/adjust"
 
-iter_max = 20
+iter_max = 1
 
 def generate_random_values(size):
     return np.round(np.random.uniform(low=0.0, high=15.0, size=size), 2).tolist()
@@ -40,8 +40,11 @@ def fit_request_loop():
 def weights_request_loop():
     for sensor in sensor_ids:
         response = requests.get(weights_url.format(sensor_id = sensor))
-        df = pd.DataFrame(response.json())
-        print(f"{df}\n")
+        if response.status_code != 200:
+            print(response.json())
+        else:
+            df = pd.DataFrame(response.json())
+            print(f"{df}\n")
 
 def predict_request_loop():
     for sensor in sensor_ids:
