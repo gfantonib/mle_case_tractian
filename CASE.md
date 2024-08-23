@@ -26,9 +26,17 @@ Esses três motivos garantem um tempo menor no processamento dessa estrutura de 
 ```
 Se uma API REST não estiver sendo rápida o suficiente, qual outra abordagem podemos utilizar?
 ```
+Pensando em alternativas para melhorar o desempenho da aplicação, até mudar a própria aplicação, temos, do mais viável ao menos viável:
+
 1. Uma primeira alternativa poderia ser a de criar **caches** a partir de requests, para que, num próximo request, seu programa primeiro procure os dados localmente, antes de fazer o request.
 
-2. Uma outra solução seria estabelecer um tipo de conexão **contínua** e **assíncrona** entre servidor e cliente, evitando o tempo gasto para estabelecer e reestabelecer a conexão. Esse tipo de abordagem reponde pelo nome de **WebSocket** e é usado em programas de *trading quantitativo*.
+2. Uma segunda alternativa seria fazer uma revisão no código e buscar entender o porque da demora e, se for possível e vantajoso, alterar o código.
+
+3. Uma terceira alternativa poderia ser a de procurar algum melhoramento no acesso ao banco de dados (otimizar as Queries).
+
+4. Uma alternativa possível mas bem menos viável seria a de rearranjar a distribuição dos servidores, aproximando o cliente da aplicação.
+
+5. Uma outra solução seria estabelecer um tipo de conexão **contínua** e **assíncrona** entre servidor e cliente, evitando o tempo gasto para estabelecer e reestabelecer a conexão. Esse tipo de abordagem reponde pelo nome de **WebSocket** e é usado em programas de *trading quantitativo*. Penso que essa seria a menos viável por não saber se existe compatibilidade entre esse modelo e o serviço da Tractian e porque a fazer essa mudança implicaria num refazimento muito grande da aplicação.
 
 [speed-obsessed traders](https://www.forbes.com/forbes/2010/0927/outfront-netscape-jim-barksdale-daniel-spivey-wall-street-speed-war.html)
 
