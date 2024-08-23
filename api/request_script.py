@@ -4,7 +4,6 @@ import requests
 import numpy as np
 import random
 import pandas as pd
-import json
 
 # Define the list of sensor IDs
 sensor_ids = [
