@@ -32,4 +32,4 @@ if __name__ == "__main__":
         print(f"Error creating CSV file: {e}")
         exit(1)
     
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
