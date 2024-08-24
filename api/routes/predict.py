@@ -20,7 +20,7 @@ def sensor_predict(sensor_id):
         if df_sensor.empty:
             return jsonify({"error": f"Sensor ID {sensor_id} not found"}), 404
         
-        series_bool = discriminator >= df_sensor["mean"].values[0] + 2*df_sensor["std_dev"].values[0]
-        return jsonify({"result": bool(series_bool)})
+        series_bool = series_bool = 20 >= df_sensor["mean"] + 2*df_sensor["std_dev"]
+        return series_bool.to_json()
     except Exception as e:
         return jsonify({"error": f"Error processing prediction: {str(e)}"}), 500
