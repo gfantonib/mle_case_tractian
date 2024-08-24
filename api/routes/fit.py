@@ -24,12 +24,9 @@ def sensor_fit(sensor_id):
 
     try:
         df = pd.read_csv(csv_file_path)
-        
-        if sensor_id in df['sensor_id'].values:
-            df.loc[df['sensor_id'] == sensor_id, ['mean', 'std_dev']] = [mean, std_dev]
-        else:
-            new_row = pd.DataFrame({'sensor_id': [sensor_id], 'mean': [mean], 'std_dev': [std_dev]})
-            df = pd.concat([df, new_row], ignore_index=True)
+
+        new_row = pd.DataFrame({'sensor_id': [sensor_id], 'mean': [mean], 'std_dev': [std_dev]})
+        df = pd.concat([df, new_row], ignore_index=True)
 
         df.to_csv(csv_file_path, index=False)
         

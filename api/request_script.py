@@ -20,7 +20,7 @@ adjust_url = "http://127.0.0.1:5000/{sensor_id}/adjust"
 iter_max = 20
 
 def generate_random_values(size):
-    return np.round(np.random.uniform(low=0.0, high=10.0, size=size), 2).tolist()
+    return np.round(np.random.uniform(low=0.0, high=20.0, size=size), 2).tolist()
 
 def send_post_request(sensor_id):
     values = generate_random_values(4)
