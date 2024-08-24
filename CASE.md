@@ -1,5 +1,5 @@
 ### 1ª etapa:
-##### Usage:
+#### Usage:
 **Para rodar o modelo otimizado:**
 
 1. Navegue até o diretório `src`:
@@ -40,7 +40,7 @@
     $> ./vector.py
 	```
 
-##### Perguntas:
+#### Perguntas:
 ```
 Se tivessemos um arquivo muito grande, qual tipo de arquivo você escolheria para armazenar os dados e por quê?
 ```
@@ -65,7 +65,7 @@ Esses três motivos garantem um tempo menor no processamento dessa estrutura de 
 [exemplo](./draft/vector.py)
 
 ### 2ª etapa:
-##### Usage:
+#### Usage:
 **Para servir e testar o modelo na API:**
 
 1. Navegue até o diretório `api`:
@@ -86,7 +86,7 @@ Esses três motivos garantem um tempo menor no processamento dessa estrutura de 
     $> ./request_script.py
     ```
 
-##### Perguntas:
+#### Perguntas:
 ```
 Se uma API REST não estiver sendo rápida o suficiente, qual outra abordagem podemos utilizar?
 ```
@@ -127,7 +127,7 @@ Sua causa poderia estar atrelado ou à mudança da sensibilidade do sensor ou à
 Em ambos os casos, um ajuste de seus dados poderia ser feito. O sucesso desse ajuste poderia ser testado observando novamente a precisão do modelo.
 
 ### 3ª etapa:
-##### Usage:
+#### Usage:
 **Para rodar a API usando Docker:**
 
 1. Navegue até o diretório `api`:
