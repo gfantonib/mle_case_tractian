@@ -49,12 +49,19 @@ def predict_request_loop():
     for sensor in sensor_ids:
         values = generate_random_values(1)
         data = {"values": values[0]}
-        response = requests.post(predict_url.format(sensor_id = sensor), json=data)
-        df_sensor_alert = pd.DataFrame({
-            'sensor_id': [sensor] * len(response.json()),
-            'alert': list(response.json().values())
-        })
-        print(f"{df_sensor_alert}\n")
+        response = requests.post(predict_url.format(sensor_id=sensor), json=data)
+        if response.status_code != 200:
+            print(response.json())
+        else:
+            response_data = response.json()
+            
+            df_sensor_alert = pd.DataFrame({
+                'sensor_id': [sensor] * len(response_data),
+                'id': [item['id'] for item in response_data],
+                'alert': [item['result'] for item in response_data]
+            })
+            
+            print(f"{df_sensor_alert}\n")
 
 def adjust_request_loop():
     for sensor in sensor_ids:

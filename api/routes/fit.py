@@ -25,12 +25,15 @@ def sensor_fit(sensor_id):
     try:
         df = pd.read_parquet(parquet_file_path)
 
-        new_row = pd.DataFrame({'sensor_id': [sensor_id], 'mean': [mean], 'std_dev': [std_dev]})
+        new_id = df['id'].max() + 1 if not df.empty else 1
+
+        new_row = pd.DataFrame({'id': [new_id], 'sensor_id': [sensor_id], 'mean': [mean], 'std_dev': [std_dev]})
         df = pd.concat([df, new_row], ignore_index=True)
 
         df.to_parquet(parquet_file_path, index=False)
         
         result = {
+            "id": int(new_id),
             "sensor_id": sensor_id,
             "mean": mean,
             "std_dev": std_dev
