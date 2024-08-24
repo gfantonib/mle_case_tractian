@@ -1,42 +1,43 @@
 ### 1ª etapa:
 ##### Usage:
-Para rodar o modelo otimizado:
+**Para rodar o modelo otimizado:**
 
 1. Navegue até o diretório `src`:
 
     ```bash
-    cd src
+    $> cd src
     ```
 
 2. Execute o script Python:
 
     ```bash
-    ./ml_run.py
+    $> ./ml_run.py
     ```
-Para rodar uma comparação entre o modelo fornecido e o modelo otimizado:
+**Para rodar uma comparação entre o modelo fornecido e o modelo otimizado:**
 
 1. Navegue até o diretório `time_battery`:
 
     ```bash
-    cd time_battery
+    $> cd time_battery
     ```
 
 2. Execute o script Python:
 
     ```bash
-    ./time_battery.py
+    $> ./time_battery.py
     ```
-Para rodar uma comparação entre iterar por uma `lista` e por um `vetor` *(numpy array)*:
+**Para rodar uma comparação entre iterar por uma `lista` e por um `vetor` *(numpy array)*:**
 
 1. Navegue até o diretório `draft`
+
     ```bash
-    cd draft
+    $> cd draft
     ```
 
 2. Execute o script Python:
 
     ```bash
-    ./vector.py
+    $> ./vector.py
 	```
 
 ##### Perguntas:
@@ -65,24 +66,24 @@ Esses três motivos garantem um tempo menor no processamento dessa estrutura de 
 
 ### 2ª etapa:
 ##### Usage:
-Para servir e testar o modelo na API:
+**Para servir e testar o modelo na API:**
 
 1. Navegue até o diretório `api`:
 
     ```bash
-    cd api
+    $> cd api
     ```
 
 2. Inicialize a API no *localhost* na porta *5000* rodando o script Python:
 
     ```bash
-    ./app.py
+    $> ./app.py
     ```
 
 3. Teste todas as *requests* automaticamente rodando o script Python:
 
     ```bash
-    ./request_script.py
+    $> ./request_script.py
     ```
 
 ##### Perguntas:
@@ -127,34 +128,34 @@ Em ambos os casos, um ajuste de seus dados poderia ser feito. O sucesso desse aj
 
 ### 3ª etapa:
 ##### Usage:
-Para rodar a API usando Docker:
+**Para rodar a API usando Docker:**
 
 1. Navegue até o diretório `api`:
 
     ```bash
-    cd api
+    $> cd api
     ```
 
 2. Construa a imagem Docker:
 
     ```bash
-    docker build -t my-flask-app .
+    $> docker build -t my-flask-app .
     ```
 
 3. Rode o container mapeando a porta *5000:5000*:
 
     ```bash
-    docker run -d -p 5000:5000 my-flask-app
+	$> docker run -d -p 5000:5000 my-flask-app
 	```
 
 4. Se preferir, construa a imagem e rode o conteinar de uma vez rodando o shell script:
 
     ```bash
-    ./run_docker.sh
+    $> ./run_docker.sh
 	```
 
 5. Teste a aplicação com o script Python:
 
     ```bash
-    ./request_script.py
+    $> ./request_script.py
     ```
