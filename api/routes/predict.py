@@ -7,4 +7,4 @@ predict_blueprint = Blueprint("predict", __name__)
 def sensor_predict(sensor_id):
     data = request.get_json()
     result = process_predict(sensor_id, data)
-    return jsonify(result), result.get("status", 200)
+    return jsonify(result), 200

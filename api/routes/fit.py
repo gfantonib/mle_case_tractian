@@ -7,4 +7,4 @@ fit_blueprint = Blueprint("fit", __name__)
 def sensor_fit(sensor_id):
     data = request.get_json()
     result = process_fit(sensor_id, data)
-    return jsonify(result), result.get("status", 200)
+    return jsonify(result), 200

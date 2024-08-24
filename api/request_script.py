@@ -38,14 +38,14 @@ def fit_request_loop():
 def weights_request_loop():
     for sensor in sensor_ids:
         response = requests.get(weights_url.format(sensor_id = sensor))
-        print(response.json())
+        print(f"{response.json()}\n")
 
 def predict_request_loop():
     for sensor in sensor_ids:
         values = generate_random_values(1)
         data = {"values": values[0]}
         response = requests.post(predict_url.format(sensor_id=sensor), json=data)
-        print(response.json())
+        print(f"{response.json()}\n")
 
 def adjust_request_loop():
     for sensor in sensor_ids:

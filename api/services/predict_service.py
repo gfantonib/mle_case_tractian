@@ -22,6 +22,6 @@ def process_predict(sensor_id, data):
             'result': bool_series
         })
         
-        return result_df.to_dict(orient='records')[0]
+        return result_df.to_dict(orient='records')
     except Exception as e:
         return {"error": f"Error processing prediction: {str(e)}", "status": 500}
