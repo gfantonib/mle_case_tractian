@@ -100,7 +100,7 @@ Pensando em alternativas para melhorar o desempenho da aplicação, até mudar a
 
 4. Uma alternativa possível mas bem menos viável seria a de rearranjar a distribuição dos servidores, aproximando o cliente da aplicação.
 
-5. Uma outra solução seria estabelecer um tipo de conexão **contínua** e **assíncrona** entre servidor e cliente, evitando o tempo gasto para estabelecer e reestabelecer a conexão. Esse tipo de abordagem reponde pelo nome de **WebSocket** e é usado em programas de *trading quantitativo*. Penso que essa seria a menos viável por não saber se existe compatibilidade entre esse modelo e o serviço da Tractian e porque a fazer essa mudança implicaria num refazimento muito grande da aplicação.
+5. Uma outra solução seria estabelecer um tipo de conexão **contínua** e **assíncrona** entre servidor e cliente, evitando o tempo gasto para estabelecer e reestabelecer a conexão. Esse tipo de abordagem reponde pelo nome de **WebSocket** e é usado em programas de *trading quantitativo*. Penso que essa seria a menos viável porque fazer essa mudança (de uma REST API para um WebSocket) implicaria num refazimento muito grande da aplicação.
 
 [speed-obsessed traders](https://www.forbes.com/forbes/2010/0927/outfront-netscape-jim-barksdale-daniel-spivey-wall-street-speed-war.html)
 
