@@ -3,7 +3,7 @@ import pandas as pd
 
 predict_blueprint = Blueprint("predict", __name__)
 
-csv_file_path = "sensor_data.csv"
+parquet_file_path = "sensor_data.parquet"
 
 @predict_blueprint.route("/<sensor_id>/predict", methods=["POST"])
 def sensor_predict(sensor_id):
@@ -14,7 +14,7 @@ def sensor_predict(sensor_id):
         return jsonify({"error": "Invalid input: value must be a number"}), 400
 
     try:
-        df = pd.read_csv(csv_file_path)
+        df = pd.read_parquet(parquet_file_path)
         df_sensor = df[df['sensor_id'] == sensor_id]
         
         if df_sensor.empty:

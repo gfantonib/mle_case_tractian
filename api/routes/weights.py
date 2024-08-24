@@ -3,12 +3,12 @@ import pandas as pd
 
 weights_blueprint = Blueprint("weights", __name__)
 
-csv_file_path = "sensor_data.csv"
+parquet_file_path = "sensor_data.parquet"
 
 @weights_blueprint.route("/<sensor_id>/weights", methods=["GET"])
 def sensor_weights(sensor_id):
     try:
-        df = pd.read_csv(csv_file_path)
+        df = pd.read_parquet(parquet_file_path)
         filtered_df = df[df['sensor_id'] == sensor_id]
         
         if filtered_df.empty:

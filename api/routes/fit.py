@@ -4,7 +4,7 @@ import pandas as pd
 
 fit_blueprint = Blueprint("fit", __name__)
 
-csv_file_path = "sensor_data.csv"
+parquet_file_path = "sensor_data.parquet"
 
 @fit_blueprint.route("/<sensor_id>/fit", methods=["POST"])
 def sensor_fit(sensor_id):
@@ -23,12 +23,12 @@ def sensor_fit(sensor_id):
         return jsonify({"error": f"Error calculating statistics: {str(e)}"}), 500
 
     try:
-        df = pd.read_csv(csv_file_path)
+        df = pd.read_parquet(parquet_file_path)
 
         new_row = pd.DataFrame({'sensor_id': [sensor_id], 'mean': [mean], 'std_dev': [std_dev]})
         df = pd.concat([df, new_row], ignore_index=True)
 
-        df.to_csv(csv_file_path, index=False)
+        df.to_parquet(parquet_file_path, index=False)
         
         result = {
             "sensor_id": sensor_id,
@@ -38,4 +38,4 @@ def sensor_fit(sensor_id):
         
         return jsonify(result)
     except Exception as e:
-        return jsonify({"error": f"Error updating CSV file: {str(e)}"}), 500
+        return jsonify({"error": f"Error updating Parquet file: {str(e)}"}), 500
