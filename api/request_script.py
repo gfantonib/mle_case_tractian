@@ -3,7 +3,6 @@
 import requests
 import numpy as np
 import random
-import pandas as pd
 
 # Define the list of sensor IDs
 sensor_ids = [
@@ -39,29 +38,14 @@ def fit_request_loop():
 def weights_request_loop():
     for sensor in sensor_ids:
         response = requests.get(weights_url.format(sensor_id = sensor))
-        if response.status_code != 200:
-            print(response.json())
-        else:
-            df = pd.DataFrame(response.json())
-            print(f"{df}\n")
+        print(response.json())
 
 def predict_request_loop():
     for sensor in sensor_ids:
         values = generate_random_values(1)
         data = {"values": values[0]}
         response = requests.post(predict_url.format(sensor_id=sensor), json=data)
-        if response.status_code != 200:
-            print(response.json())
-        else:
-            response_data = response.json()
-            
-            df_sensor_alert = pd.DataFrame({
-                'sensor_id': [sensor] * len(response_data),
-                'id': [item['id'] for item in response_data],
-                'alert': [item['result'] for item in response_data]
-            })
-            
-            print(f"{df_sensor_alert}\n")
+        print(response.json())
 
 def adjust_request_loop():
     for sensor in sensor_ids:
