@@ -159,3 +159,55 @@ Em ambos os casos, um ajuste de seus dados poderia ser feito. O sucesso desse aj
     ```bash
     $> ./request_script.py
     ```
+
+**Comandos adicionais do Docker:**
+
+- Listar containers ativos:
+
+    ```bash
+    $> docker ps
+    ```
+
+- Listar containers ativos e não ativos:
+
+    ```bash
+    $> docker ps -a
+    ```
+
+- Desativar container:
+
+    ```bash
+    $> docker stop <id>
+    ```
+
+- Ativar container:
+
+    ```bash
+    $> docker start <id>
+    ```
+
+- Remover container:
+
+    ```bash
+    $> docker rm <container id>
+    ```
+
+- Listar imagens:
+
+    ```bash
+    $> docker images
+    ```
+
+- Remover imagem:
+
+    ```bash
+    $> docker rmi <image id>
+    ```
+
+**Para rodar o comando `docker` sem sudo:**
+
+```bash
+$> sudo groupadd docker
+$> sudo usermod -aG docker $USER
+$> newgrp docker
+```
