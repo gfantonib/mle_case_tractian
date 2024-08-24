@@ -1,4 +1,45 @@
 ### 1ª etapa:
+##### Usage:
+Para rodar o modelo otimizado:
+
+1. Navegue até o diretório `src`:
+
+    ```bash
+    cd src
+    ```
+
+2. Execute o script Python:
+
+    ```bash
+    ./ml_run.py
+    ```
+Para rodar uma comparação entre o modelo fornecido e o modelo otimizado:
+
+1. Navegue até o diretório `time_battery`:
+
+    ```bash
+    cd time_battery
+    ```
+
+2. Execute o script Python:
+
+    ```bash
+    ./time_battery.py
+    ```
+Para rodar uma comparação entre iterar por uma `lista` e por um `vetor` *(numpy array)*:
+
+1. Navegue até o diretório `draft`
+    ```bash
+    cd draft
+    ```
+
+2. Execute o script Python:
+
+    ```bash
+    ./vector.py
+	```
+
+##### Perguntas:
 ```
 Se tivessemos um arquivo muito grande, qual tipo de arquivo você escolheria para armazenar os dados e por quê?
 ```
@@ -7,8 +48,9 @@ O arquivo **parquet** seria uma boa alternativa.
 2. Sistema de armazenamento e representação culunar que aumenta a eficiência na busca de dados.
 3. Suporta esquemas eficientes de compressão, diminuindo consideravelmente o espaço de armazenamento.
 
-[referência-1](https://parquet.apache.org/docs/overview/motivation/)\
-[referência-2](https://www.linkedin.com/pulse/impressive-csv-vs-parquet-performance-file-size-niraj-hirachan/)
+[parquet documentation](https://parquet.apache.org/docs/overview/motivation/)\
+[parquet performance](https://www.linkedin.com/pulse/impressive-csv-vs-parquet-performance-file-size-niraj-hirachan/)\
+[dremel paper](https://static.googleusercontent.com/media/research.google.com/pt-BR//pubs/archive/36632.pdf)
 
 ```
 O que é vetorização e por quê ela diminui o tempo de processamento de grandes volumes de dados?
@@ -18,11 +60,32 @@ Quando usamos estruturas de datos vetorizadas, temos as seguintes vantagens:
 2. Os dados de um vetor serão sempre do mesmo tipo *(restrição)* facilitando as operações feitas neles *(vantagem)*.
 3. Um vetor tira vantagem da arquitetura computacional *(multi-core)* para paralelizar o processamento.
 
-Esses três motivos garantem um tempo menor no processamento dessa estrutura de dados.
-
+Esses três motivos garantem um tempo menor no processamento dessa estrutura de dados.\
 [exemplo](./draft/vector.py)
 
 ### 2ª etapa:
+##### Usage:
+Para servir e testar o modelo na API:
+
+1. Navegue até o diretório `api`:
+
+    ```bash
+    cd api
+    ```
+
+2. Inicialize a API no *localhost* na porta *5000* rodando o script Python:
+
+    ```bash
+    ./app.py
+    ```
+
+3. Teste todas as *requests* automaticamente rodando o script Python:
+
+    ```bash
+    ./request_script.py
+    ```
+
+##### Perguntas:
 ```
 Se uma API REST não estiver sendo rápida o suficiente, qual outra abordagem podemos utilizar?
 ```
@@ -63,3 +126,35 @@ Sua causa poderia estar atrelado ou à mudança da sensibilidade do sensor ou à
 Em ambos os casos, um ajuste de seus dados poderia ser feito. O sucesso desse ajuste poderia ser testado observando novamente a precisão do modelo.
 
 ### 3ª etapa:
+##### Usage:
+Para rodar a API usando Docker:
+
+1. Navegue até o diretório `api`:
+
+    ```bash
+    cd api
+    ```
+
+2. Construa a imagem Docker:
+
+    ```bash
+    docker build -t my-flask-app .
+    ```
+
+3. Rode o container mapeando a porta *5000:5000*:
+
+    ```bash
+    docker run -d -p 5000:5000 my-flask-app
+	```
+
+4. Se preferir, construa a imagem e rode o conteinar de uma vez rodando o shell script:
+
+    ```bash
+    ./run_docker.sh
+	```
+
+5. Teste a aplicação com o script Python:
+
+    ```bash
+    ./request_script.py
+    ```
