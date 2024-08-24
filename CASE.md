@@ -177,13 +177,13 @@ Em ambos os casos, um ajuste de seus dados poderia ser feito. O sucesso desse aj
 - Desativar container:
 
     ```bash
-    $> docker stop <id>
+    $> docker stop <container id>
     ```
 
 - Ativar container:
 
     ```bash
-    $> docker start <id>
+    $> docker start <container id>
     ```
 
 - Remover container:
