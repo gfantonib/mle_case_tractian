@@ -28,9 +28,7 @@ def process_predict(sensor_id, data):
             return {"error": f"Sensor ID {sensor_id} not found", "status": 404}
 
         bool_series = discriminator >= df_sensor["mean"] + 2*df_sensor["std_dev"]
-        result_df = pd.DataFrame({
-            'result': bool_series
-        })
         return bool_series.to_dict()
+    
     except Exception as e:
         return {"error": f"Error processing prediction: {str(e)}", "status": 500}
