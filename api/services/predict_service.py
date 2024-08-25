@@ -4,6 +4,17 @@ from data_access.parquet_manager import read_parquet
 parquet_file_path = "sensor_data.parquet"
 
 def process_predict(sensor_id, data):
+    """
+    Processes a prediction request for a given sensor ID.
+
+    Args:
+        sensor_id (str): The ID of the sensor.
+        data (dict): A dictionary containing the discriminator value for the prediction.
+
+    Returns:
+        dict: A dictionary containing the prediction results with 'id' and 'result'.
+              If there's an error, returns an error message and status code.
+    """
     discriminator = data.get("values")
 
     if not isinstance(discriminator, (int, float)):
@@ -22,6 +33,6 @@ def process_predict(sensor_id, data):
             'result': bool_series
         })
         
-        return result_df.to_dict(orient='records')
+        return result_df.to_dict(orient='index')
     except Exception as e:
         return {"error": f"Error processing prediction: {str(e)}", "status": 500}

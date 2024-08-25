@@ -5,6 +5,17 @@ from data_access.parquet_manager import read_parquet, write_parquet
 parquet_file_path = "sensor_data.parquet"
 
 def process_fit(sensor_id, data):
+    """
+    Processes the fit request for a given sensor ID.
+
+    Args:
+        sensor_id (str): The ID of the sensor.
+        data (dict): A dictionary containing the values for mean and standard deviation calculations.
+
+    Returns:
+        dict: A dictionary containing the results with 'id', 'sensor_id', 'mean', and 'std_dev'.
+              If there's an error, returns an error message and status code.
+    """
     values = data.get("values")
 
     if not isinstance(values, list) or not all(isinstance(x, (int, float)) for x in values):
