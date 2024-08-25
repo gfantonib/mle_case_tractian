@@ -77,13 +77,13 @@ Esses três motivos garantem um tempo menor no processamento dessa estrutura de 
 2. Inicialize a API no *localhost* na porta *5000* rodando o script Python:
 
     ```bash
-    $> ./app.py
+    $> python app.py
     ```
 
 3. Teste todas as *requests* automaticamente rodando o script Python:
 
     ```bash
-    $> ./request_script.py
+    $> python request_script.py
     ```
 
 #### Perguntas:
