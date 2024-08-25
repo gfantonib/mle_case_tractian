@@ -64,6 +64,8 @@ Quando usamos estruturas de datos vetorizadas, temos as seguintes vantagens:
 Esses três motivos garantem um tempo menor no processamento dessa estrutura de dados.\
 [exemplo](./draft/vector.py)
 
+---
+
 ### 2ª etapa:
 #### Usage:
 **Para servir e testar o modelo na API:**
@@ -113,7 +115,7 @@ Quais métricas de performance da API você monitoraria para garantir que seu si
 4. **Throughput:** O número de solicitações bem-sucedidas processadas pela API por unidade de tempo.
 5. **Availability:** A porcentagem de tempo em que a API está operacional e acessível aos usuários.
 
-Essas são algumas métricas de monitoramento da API, mas definitivamente não são as únicas. Seria possível dizer que, mesmo no caso de essas 5 métricas estarem respondendo conforme o esperado, sua API não está funcionando bem. É importante lembrar que a métrica final de uma aplicação é a satisfação do cliente, e que, mesmo se uma API está *performando* bem, não significa que ela está *funcionando* bem, uma vez que sua funcionalidade e usabilidade não está agradando o usuário.
+Essas são algumas métricas de monitoramento da API, mas definitivamente não são as únicas. Seria possível dizer que, mesmo no caso de essas 5 métricas estarem respondendo conforme o esperado, sua API não está funcionando bem. É importante lembrar que a métrica final de uma aplicação é a satisfação do cliente, e que, mesmo se uma API está *performando* bem, não significa que ela está *funcionando* bem, uma vez que sua funcionalidade e usabilidade pode não estar agradando o usuário.
 
 [referência](https://www.catchpoint.com/api-monitoring-tools/api-performance-monitoring)
 
@@ -126,11 +128,11 @@ O erro poderia ser detectado pela diminuição da precisão do modelo.\
 Sua causa poderia estar atrelado ou à mudança da sensibilidade do sensor ou à alguma modificação do fenômeno que ele mede (ex: temperatura da máquina).\
 Em ambos os casos, um ajuste de seus dados poderia ser feito. O sucesso desse ajuste poderia ser testado observando novamente a precisão do modelo.
 
+---
+
 ### 3ª etapa:
 #### Usage:
 **Para rodar a API usando Docker:**
-
-sudo systemctl start docker
 
 1. Use o comando `systemctl` para ativar o Docker:
 
