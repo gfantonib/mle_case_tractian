@@ -21,7 +21,7 @@ parquet_file_path = "sensor_data.parquet"
 def internal_server_error(error):
     return jsonify({"error": "Internal Server Error"}), 500
 
-if __name__ == "__main__":
+def create_parquet_database():
     try:
         if not os.path.exists(parquet_file_path):
             df = pd.DataFrame(columns=["sensor_id", "mean", "std_dev"])
@@ -30,4 +30,6 @@ if __name__ == "__main__":
         print(f"Error creating Parquet file: {e}")
         exit(1)
 
+if __name__ == "__main__":
+    create_parquet_database()
     app.run(host="0.0.0.0", port=5000, debug=True)
