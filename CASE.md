@@ -240,13 +240,19 @@ $> mkdir <venv>
 $> source <venv>/bin/activate
 ```
 
-3. Instale os pacotes necessários para a aplicação:
+3. Depois de ter instalado com `pip install` os pacotes necessários para a aplicação, mova as dependências para o arquivo `requirement.txt`:
+
+```bash
+$> pip freeze > requirements.txt
+```
+
+4. Se já tiver o arquivo `requirement.txt` com todas as dependências necessárias, instale elas no seu ambiente virtual:
 
 ```bash
 $> pip install -r requirements.txt
 ```
 
-4. Para desativar o ambiente virtual:
+5. Para desativar o ambiente virtual:
 
 ```bash
 $> deactivate
