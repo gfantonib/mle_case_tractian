@@ -1,4 +1,3 @@
-import pandas as pd
 from data_access.parquet_manager import read_parquet
 
 parquet_file_path = "sensor_data.parquet"
