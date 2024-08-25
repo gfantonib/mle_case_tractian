@@ -219,3 +219,27 @@ $> sudo groupadd docker
 $> sudo usermod -aG docker $USER
 $> newgrp docker
 ```
+
+---
+
+### python virtual environments
+
+**Para criar um ambiente virtual do python**
+
+1. Crie uma pasta destino:
+
+```bash
+$> mkdir <venv>
+```
+
+2. Ative o ambiente virtual:
+
+```bash
+$> source <venv>/bin/activate
+```
+
+3. Instale os pacotes necessários para a aplicação:
+
+```bash
+$> pip install -r requirements.txt
+```
