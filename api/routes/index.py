@@ -1,7 +1,7 @@
-from flask import Blueprint
+from flask import Blueprint, jsonify
 
 index_blueprint = Blueprint("index", __name__)
 
 @index_blueprint.route("/")
 def index():
-    return "index page!"
+    return jsonify({"value": "index page!"})
