@@ -40,8 +40,7 @@ def weights_request_loop():
 
 def predict_request_loop():
     for sensor in sensor_ids:
-        values = generate_random_values(1)
-        data = {"values": values[0]}
+        data = {"values": 20}
         response = requests.post(predict_url.format(sensor_id=sensor), json=data)
         print(f"{response.json()}\n")
 
