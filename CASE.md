@@ -130,31 +130,39 @@ Em ambos os casos, um ajuste de seus dados poderia ser feito. O sucesso desse aj
 #### Usage:
 **Para rodar a API usando Docker:**
 
-1. Navegue até o diretório `api`:
+sudo systemctl start docker
+
+1. Use o comando `systemctl` para ativar o Docker:
+
+    ```bash
+    $> sudo systemctl start docker
+    ```
+
+2. Navegue até o diretório `api`:
 
     ```bash
     $> cd api
     ```
 
-2. Construa a imagem Docker:
+3. Construa a imagem Docker:
 
     ```bash
     $> docker build -t my-flask-app .
     ```
 
-3. Rode o container mapeando a porta *5000:5000*:
+4. Rode o container mapeando a porta *5000:5000*:
 
     ```bash
 	$> docker run -d -p 5000:5000 my-flask-app
 	```
 
-4. Se preferir, construa a imagem e rode o conteinar de uma vez rodando o shell script:
+5. Se preferir, construa a imagem e rode o conteinar de uma vez rodando o shell script:
 
     ```bash
     $> ./run_docker.sh
 	```
 
-5. Teste a aplicação com o script Python:
+6. Teste a aplicação com o script Python:
 
     ```bash
     $> ./request_script.py
