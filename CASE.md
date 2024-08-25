@@ -243,3 +243,9 @@ $> source <venv>/bin/activate
 ```bash
 $> pip install -r requirements.txt
 ```
+
+4. Para desativar o ambiente virtual:
+
+```bash
+$> deactivate
+```
