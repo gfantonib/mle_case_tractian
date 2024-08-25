@@ -24,7 +24,7 @@ def internal_server_error(error):
 if __name__ == "__main__":
     try:
         if not os.path.exists(parquet_file_path):
-            df = pd.DataFrame(columns=["id", "sensor_id", "mean", "std_dev"])
+            df = pd.DataFrame(columns=["sensor_id", "mean", "std_dev"])
             df.to_parquet(parquet_file_path, index=False)
     except Exception as e:
         print(f"Error creating Parquet file: {e}")

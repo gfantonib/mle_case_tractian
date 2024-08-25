@@ -12,7 +12,7 @@ def process_predict(sensor_id, data):
         data (dict): A dictionary containing the discriminator value for the prediction.
 
     Returns:
-        dict: A dictionary containing the prediction results with 'id' and 'result'.
+        dict: A dictionary containing the prediction results.
               If there's an error, returns an error message and status code.
     """
     discriminator = data.get("values")
@@ -27,12 +27,10 @@ def process_predict(sensor_id, data):
         if df_sensor.empty:
             return {"error": f"Sensor ID {sensor_id} not found", "status": 404}
 
-        bool_series = 20 >= df_sensor["mean"] + 2*df_sensor["std_dev"]
+        bool_series = discriminator >= df_sensor["mean"] + 2*df_sensor["std_dev"]
         result_df = pd.DataFrame({
-            'id': df_sensor['id'],
             'result': bool_series
         })
-        
-        return result_df.to_dict(orient='index')
+        return bool_series.to_dict()
     except Exception as e:
         return {"error": f"Error processing prediction: {str(e)}", "status": 500}

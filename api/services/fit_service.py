@@ -32,13 +32,11 @@ def process_fit(sensor_id, data):
     try:
         df = read_parquet(parquet_file_path)
 
-        new_id = df['id'].max() + 1 if not df.empty else 1
-
-        new_row = pd.DataFrame({'id': [new_id], 'sensor_id': [sensor_id], 'mean': [mean], 'std_dev': [std_dev]})
+        new_row = pd.DataFrame({'sensor_id': [sensor_id], 'mean': [mean], 'std_dev': [std_dev]})
         df = pd.concat([df, new_row], ignore_index=True)
 
         write_parquet(df, parquet_file_path)
 
-        return {"id": int(new_id), "sensor_id": sensor_id, "mean": mean, "std_dev": std_dev}
+        return {"sensor_id": sensor_id, "mean": mean, "std_dev": std_dev}
     except Exception as e:
         return {"error": f"Error updating Parquet file: {str(e)}", "status": 500}
