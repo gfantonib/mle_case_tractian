@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import requests
 import numpy as np
 import random
