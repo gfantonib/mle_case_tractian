@@ -1,8 +1,7 @@
 import pandas as pd
 import numpy as np
 from data_access.parquet_manager import read_parquet, write_parquet
-
-parquet_file_path = "sensor_data.parquet"
+from config import PARQUET_FILE_PATH
 
 def process_fit(sensor_id, data):
     """
@@ -30,12 +29,12 @@ def process_fit(sensor_id, data):
         return {"error": f"Error calculating statistics: {str(e)}", "status": 500}
 
     try:
-        df = read_parquet(parquet_file_path)
+        df = read_parquet(PARQUET_FILE_PATH)
 
         new_row = pd.DataFrame({'sensor_id': [sensor_id], 'mean': [mean], 'std_dev': [std_dev]})
         df = pd.concat([df, new_row], ignore_index=True)
 
-        write_parquet(df, parquet_file_path)
+        write_parquet(df, PARQUET_FILE_PATH)
 
         return {"sensor_id": sensor_id, "mean": mean, "std_dev": std_dev}
     except Exception as e:

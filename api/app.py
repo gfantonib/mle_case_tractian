@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 import pandas as pd
 import os
+from config import PARQUET_FILE_PATH
 
 from routes.index import index_blueprint
 from routes.fit import fit_blueprint
@@ -15,7 +16,7 @@ app.register_blueprint(weights_blueprint)
 app.register_blueprint(predict_blueprint)
 app.register_blueprint(adjust_blueprint)
 
-parquet_file_path = "sensor_data.parquet"
+# parquet_file_path = "sensor_data.parquet"
 
 @app.errorhandler(500)
 def internal_server_error(error):
@@ -23,9 +24,9 @@ def internal_server_error(error):
 
 def create_parquet_database():
     try:
-        if not os.path.exists(parquet_file_path):
+        if not os.path.exists(PARQUET_FILE_PATH):
             df = pd.DataFrame(columns=["sensor_id", "mean", "std_dev"])
-            df.to_parquet(parquet_file_path, index=False)
+            df.to_parquet(PARQUET_FILE_PATH, index=False)
     except Exception as e:
         print(f"Error creating Parquet file: {e}")
         exit(1)

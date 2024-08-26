@@ -1,6 +1,5 @@
 from data_access.parquet_manager import read_parquet, write_parquet
-
-parquet_file_path = "sensor_data.parquet"
+from config import PARQUET_FILE_PATH
 
 def process_adjust(sensor_id):
     """
@@ -14,13 +13,13 @@ def process_adjust(sensor_id):
               If the sensor ID is not found or an error occurs, returns an error message and status code.
     """
     try:
-        df = read_parquet(parquet_file_path)
+        df = read_parquet(PARQUET_FILE_PATH)
         
         if sensor_id not in df['sensor_id'].values:
             return {"error": f"Sensor ID {sensor_id} not found", "status": 404}
         
         df.loc[df['sensor_id'] == sensor_id, 'mean'] *= 1.10
-        write_parquet(df, parquet_file_path)
+        write_parquet(df, PARQUET_FILE_PATH)
         
         return {"message": "Database updated successfully"}
     except Exception as e:

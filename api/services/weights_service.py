@@ -1,6 +1,5 @@
 from data_access.parquet_manager import read_parquet
-
-parquet_file_path = "sensor_data.parquet"
+from config import PARQUET_FILE_PATH
 
 def get_weights(sensor_id):
     """
@@ -14,7 +13,7 @@ def get_weights(sensor_id):
               Status codes included in case of errors.
     """
     try:
-        df = read_parquet(parquet_file_path)
+        df = read_parquet(PARQUET_FILE_PATH)
         filtered_df = df[df['sensor_id'] == sensor_id]
         
         if filtered_df.empty:

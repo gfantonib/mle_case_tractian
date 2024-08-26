@@ -1,6 +1,5 @@
 from data_access.parquet_manager import read_parquet
-
-parquet_file_path = "sensor_data.parquet"
+from config import PARQUET_FILE_PATH
 
 def process_predict(sensor_id, data):
     """
@@ -20,7 +19,7 @@ def process_predict(sensor_id, data):
         return {"error": "Invalid input: value must be a number", "status": 400}
 
     try:
-        df = read_parquet(parquet_file_path)
+        df = read_parquet(PARQUET_FILE_PATH)
         df_sensor = df[df['sensor_id'] == sensor_id]
         
         if df_sensor.empty:
