@@ -221,6 +221,7 @@ $> sudo groupadd docker
 $> sudo usermod -aG docker $USER
 $> newgrp docker
 ```
+[Docker documentation](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/)
 
 ---
 
@@ -257,3 +258,4 @@ $> pip install -r requirements.txt
 ```bash
 $> deactivate
 ```
+[venv python documentation](https://docs.python.org/3/library/venv.html)
