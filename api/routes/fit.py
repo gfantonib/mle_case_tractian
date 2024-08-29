@@ -13,7 +13,7 @@ def sensor_fit(sensor_id):
         data (dict): A dictionary containing the values for mean and standard deviation calculations.
 
     Returns:
-        Response: A JSON response containing the result of the fit process with 'id', 'sensor_id', 'mean', and 'std_dev',
+        Response: A JSON response containing the result of the fit process with 'sensor_id', 'mean', and 'std_dev',
                   or an error message with the appropriate status code if the request is invalid or an error occurs.
     """
     result = process_fit(sensor_id, request.get_json())

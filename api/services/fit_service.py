@@ -12,7 +12,7 @@ def process_fit(sensor_id, data):
         data (dict): A dictionary containing the values for mean and standard deviation calculations.
 
     Returns:
-        dict: A dictionary containing the results with 'id', 'sensor_id', 'mean', and 'std_dev'.
+        dict: A dictionary containing the results with 'sensor_id', 'mean', and 'std_dev'.
               If there's an error, returns an error message and status code.
     """
     values = data.get("values")

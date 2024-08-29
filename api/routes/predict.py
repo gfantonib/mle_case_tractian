@@ -13,7 +13,7 @@ def sensor_predict(sensor_id):
         data (dict): A dictionary containing the discriminator value for the prediction.
 
     Returns:
-        Response: A JSON response containing the prediction results with 'id' and 'result',
+        Response: A JSON response containing the prediction results,
                   or an error message with the appropriate status code if the request is invalid or an error occurs.
     """
     result = process_predict(sensor_id, request.get_json())
