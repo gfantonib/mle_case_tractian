@@ -26,7 +26,7 @@
     ```bash
     $> ./time_battery.py
     ```
-**Para rodar uma comparação entre iterar por uma `lista` e por um `vetor` *(numpy array)*:**
+**Para rodar uma comparação de performance entre iterar por uma `lista` e por um `vetor` *(numpy array)*:**
 
 1. Navegue até o diretório `draft`
 
@@ -42,7 +42,7 @@
 
 #### Perguntas:
 ```
-Se tivessemos um arquivo muito grande, qual tipo de arquivo você escolheria para armazenar os dados e por quê?
+Se tivéssemos um arquivo muito grande, qual tipo de arquivo você escolheria para armazenar os dados e por quê?
 ```
 O arquivo **parquet** seria uma boa alternativa.
 1. Suporte em quase todas as linguagens.
@@ -221,6 +221,7 @@ $> sudo groupadd docker
 $> sudo usermod -aG docker $USER
 $> newgrp docker
 ```
+
 [Docker documentation](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/)
 
 ---
@@ -231,31 +232,37 @@ $> newgrp docker
 
 1. Crie uma pasta destino:
 
-```bash
-$> mkdir <venv>
-```
+    ```bash
+    $> mkdir <venv>
+    ```
 
-2. Ative o ambiente virtual:
+2. Crie o ambiente virtual nessa pasta:
 
-```bash
-$> source <venv>/bin/activate
-```
+    ```bash
+    $> python -m <venv>
+    ```
 
-3. Depois de ter instalado com `pip install` os pacotes necessários para a aplicação, mova as dependências para o arquivo `requirement.txt`:
+3. Ative o ambiente virtual:
 
-```bash
-$> pip freeze > requirements.txt
-```
+    ```bash
+    $> source <venv>/bin/activate
+    ```
 
-4. Se já tiver o arquivo `requirement.txt` com todas as dependências necessárias, instale elas no seu ambiente virtual:
+4. Depois de ter instalado com `pip install` os pacotes necessários para a aplicação, mova as dependências para o arquivo `requirement.txt`:
 
-```bash
-$> pip install -r requirements.txt
-```
+    ```bash
+    $> pip freeze > requirements.txt
+    ```
 
-5. Para desativar o ambiente virtual:
+5. Se já tiver o arquivo `requirement.txt` com todas as dependências necessárias, instale elas no seu ambiente virtual:
 
-```bash
-$> deactivate
-```
+    ```bash
+    $> pip install -r requirements.txt
+    ```
+
+6. Para desativar o ambiente virtual:
+
+    ```bash
+    $> deactivate
+    ```
 [venv python documentation](https://docs.python.org/3/library/venv.html)
