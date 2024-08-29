@@ -16,8 +16,6 @@ app.register_blueprint(weights_blueprint)
 app.register_blueprint(predict_blueprint)
 app.register_blueprint(adjust_blueprint)
 
-# parquet_file_path = "sensor_data.parquet"
-
 @app.errorhandler(500)
 def internal_server_error(error):
     return jsonify({"error": "Internal Server Error"}), 500
