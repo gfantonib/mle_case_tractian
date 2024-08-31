@@ -9,6 +9,8 @@ from routes.weights import weights_blueprint
 from routes.predict import predict_blueprint
 from routes.adjust import adjust_blueprint
 
+port = int(os.getenv("PORT", 5000))
+
 app = Flask(__name__)
 app.register_blueprint(index_blueprint)
 app.register_blueprint(fit_blueprint)
@@ -31,4 +33,4 @@ def create_parquet_database():
 
 if __name__ == "__main__":
     create_parquet_database()
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=port, debug=True)

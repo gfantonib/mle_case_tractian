@@ -76,13 +76,19 @@ Esses três motivos garantem um tempo menor no processamento dessa estrutura de 
     $> cd api
     ```
 
-2. Inicialize a API no *localhost* na porta *5000* rodando o script Python:
+2. Escolha a *porta* que será usada e defina ela como variável de ambiente. A porta *default* está definida para 5000:
+
+    ```bash
+    $> export PORT=<port number>
+    ```
+
+3. Inicialize a API no *localhost* rodando o script Python:
 
     ```bash
     $> python app.py
     ```
 
-3. Teste todas as *requests* automaticamente rodando o script Python:
+4. Teste todas as *requests* automaticamente rodando o script Python:
 
     ```bash
     $> python request_script.py
