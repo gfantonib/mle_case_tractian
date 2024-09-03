@@ -239,19 +239,19 @@ $> newgrp docker
 1. Crie uma pasta destino:
 
     ```bash
-    $> mkdir <venv>
+    $> mkdir <venv_path>
     ```
 
 2. Crie o ambiente virtual nessa pasta:
 
     ```bash
-    $> python -m <venv>
+    $> python -m venv <venv_path>
     ```
 
 3. Ative o ambiente virtual:
 
     ```bash
-    $> source <venv>/bin/activate
+    $> source <venv_path>/bin/activate
     ```
 
 4. Depois de ter instalado com `pip install` os pacotes necessários para a aplicação, mova as dependências para o arquivo `requirement.txt`:
